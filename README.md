@@ -214,12 +214,14 @@
 <h2 align="center">💭 Words I Live By</h2>
 <div align="center">
   <blockquote>
-    <p><i>"Simplicity is the ultimate sophistication."</i></p>
+    <p><i>"Simplicity is the ultimate sophistication. It takes a lot of hard work to make something simple, to truly understand the underlying challenges and come up with elegant solutions."</i></p>
     <p>— <strong>Leonardo da Vinci</strong></p>
   </blockquote>
   <br />
-  <p><i>"Programs must be written for people to read, and only incidentally for machines to execute."</i></p>
-  <p>— <strong>Harold Abelson</strong></p>
+  <blockquote>
+    <p><i>"Programs must be written for people to read, and only incidentally for machines to execute. The computer is incredibly fast, accurate, and stupid. Man is unbelievably slow, inaccurate, and brilliant. The marriage of the two is a force beyond calculation."</i></p>
+    <p>— <strong>Harold Abelson</strong></p>
+  </blockquote>
 </div>
 <br />
 
