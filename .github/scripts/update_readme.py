@@ -48,7 +48,10 @@ def fetch_top_starred():
     for repo in repos:
         name = repo["name"]
         stars = repo["stargazers_count"]
-        desc = repo.get("description", "No description provided.")
+        desc = repo.get("description") or "No description provided."
+        # Truncate description to 60 characters to keep the table clean
+        if len(desc) > 60:
+            desc = desc[:57] + "..."
         table += f"| **[{name}]({repo['html_url']})** | ⭐ {stars} | {desc} |\n"
     return table
 
@@ -56,18 +59,20 @@ def update_readme():
     with open("README.md", "r", encoding="utf-8") as f:
         content = f.read()
 
+    # Inject Recent Activity with proper spacing
     recent_content = fetch_recent_activity()
     content = re.sub(
         r"<!-- RECENT_ACTIVITY:start -->.*?<!-- RECENT_ACTIVITY:end -->",
-        f"<!-- RECENT_ACTIVITY:start -->\n{recent_content}\n<!-- RECENT_ACTIVITY:end -->",
+        f"<!-- RECENT_ACTIVITY:start -->\n\n{recent_content}\n\n<!-- RECENT_ACTIVITY:end -->",
         content,
         flags=re.DOTALL
     )
 
+    # Inject Top Starred with proper spacing
     starred_content = fetch_top_starred()
     content = re.sub(
         r"<!-- TOP_STARRED:start -->.*?<!-- TOP_STARRED:end -->",
-        f"<!-- TOP_STARRED:start -->\n{starred_content}\n<!-- TOP_STARRED:end -->",
+        f"<!-- TOP_STARRED:start -->\n\n{starred_content}\n\n<!-- TOP_STARRED:end -->",
         content,
         flags=re.DOTALL
     )
