@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="100" viewBox="0 0 800 100">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117" />
+      <stop offset="100%" stop-color="#161b22" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" rx="12" fill="url(#bgGrad)" stroke="#30363d" stroke-width="1" />
+  <text x="400" y="35" font-family="system-ui, sans-serif" font-size="18" fill="#58A6FF" text-anchor="middle" font-weight="bold">🛠️ Tech Stack</text>
+  <rect x="40" y="55" width="60" height="30" rx="6" fill="#777BB4" opacity="0.15" stroke="#777BB4" stroke-width="1" />
+  <text x="70" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#777BB4" text-anchor="middle" font-weight="bold">PHP</text>
+  <rect x="110" y="55" width="60" height="30" rx="6" fill="#21759B" opacity="0.15" stroke="#21759B" stroke-width="1" />
+  <text x="140" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#21759B" text-anchor="middle" font-weight="bold">WordPress</text>
+  <rect x="180" y="55" width="60" height="30" rx="6" fill="#F7DF1E" opacity="0.15" stroke="#F7DF1E" stroke-width="1" />
+  <text x="210" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#F7DF1E" text-anchor="middle" font-weight="bold">JavaScript</text>
+  <rect x="250" y="55" width="60" height="30" rx="6" fill="#3178C6" opacity="0.15" stroke="#3178C6" stroke-width="1" />
+  <text x="280" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#3178C6" text-anchor="middle" font-weight="bold">TypeScript</text>
+  <rect x="320" y="55" width="60" height="30" rx="6" fill="#E34F26" opacity="0.15" stroke="#E34F26" stroke-width="1" />
+  <text x="350" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#E34F26" text-anchor="middle" font-weight="bold">HTML5</text>
+  <rect x="390" y="55" width="60" height="30" rx="6" fill="#1572B6" opacity="0.15" stroke="#1572B6" stroke-width="1" />
+  <text x="420" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#1572B6" text-anchor="middle" font-weight="bold">CSS3</text>
+  <rect x="460" y="55" width="60" height="30" rx="6" fill="#4479A1" opacity="0.15" stroke="#4479A1" stroke-width="1" />
+  <text x="490" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#4479A1" text-anchor="middle" font-weight="bold">MySQL</text>
+  <rect x="530" y="55" width="60" height="30" rx="6" fill="#F05032" opacity="0.15" stroke="#F05032" stroke-width="1" />
+  <text x="560" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#F05032" text-anchor="middle" font-weight="bold">Git</text>
+  <rect x="600" y="55" width="60" height="30" rx="6" fill="#181717" opacity="0.15" stroke="#181717" stroke-width="1" />
+  <text x="630" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#181717" text-anchor="middle" font-weight="bold">GitHub</text>
+  <rect x="670" y="55" width="60" height="30" rx="6" fill="#FCC624" opacity="0.15" stroke="#FCC624" stroke-width="1" />
+  <text x="700" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#FCC624" text-anchor="middle" font-weight="bold">Linux</text>
+  <rect x="740" y="55" width="60" height="30" rx="6" fill="#2496ED" opacity="0.15" stroke="#2496ED" stroke-width="1" />
+  <text x="770" y="75" font-family="system-ui, sans-serif" font-size="10" fill="#2496ED" text-anchor="middle" font-weight="bold">Docker</text>
+</svg>

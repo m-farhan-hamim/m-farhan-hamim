@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="160" viewBox="0 0 800 160">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117" />
+      <stop offset="100%" stop-color="#161b22" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" rx="16" fill="url(#bgGrad)" stroke="#30363d" stroke-width="1" />
+  <text x="30" y="40" font-family="system-ui, sans-serif" font-size="20" fill="#58A6FF" font-weight="bold">📊 Developer Stats</text>
+  <line x1="20" y1="55" x2="780" y2="55" stroke="#30363d" stroke-width="1" />
+  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.1s" /><text x="100" y="90" font-family="system-ui, sans-serif" font-size="28" fill="#D29922" font-weight="bold" text-anchor="middle">13</text><text x="100" y="115" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Total Stars</text></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.2s" /><text x="300" y="90" font-family="system-ui, sans-serif" font-size="28" fill="#58A6FF" font-weight="bold" text-anchor="middle">10</text><text x="300" y="115" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Public Repos</text></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.3s" /><text x="500" y="90" font-family="system-ui, sans-serif" font-size="28" fill="#3FB950" font-weight="bold" text-anchor="middle">0</text><text x="500" y="115" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Followers</text></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.4s" /><text x="700" y="90" font-family="system-ui, sans-serif" font-size="28" fill="#8B5CF6" font-weight="bold" text-anchor="middle">1</text><text x="700" y="115" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Following</text></g>
+</svg>
