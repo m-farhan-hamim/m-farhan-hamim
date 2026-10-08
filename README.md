@@ -3,8 +3,7 @@
   M. FARHAN HAMIM — GitHub Profile README
   CEO @ PSBDx · WordPress Plugin Developer · Open‑Source Contributor
   Built with: capsule-render, readme-typing-svg, shields.io,
-              github-readme-stats, github-readme-streak-stats,
-              github-profile-trophy, skillicons.dev
+              skillicons.dev, github-readme-streak-stats
 ═══════════════════════════════════════════════════════════════
 -->
 
@@ -57,7 +56,7 @@
 
 <br />
 
-<!-- Animated bento-style info grid -->
+<!-- Bento-style info grid -->
 <table align="center" width="100%">
   <tr>
     <td align="center" width="25%">
@@ -110,7 +109,7 @@
 <br />
 
 <!-- ═══════════════════════════════════════════════════════════ -->
-<!--  SECTION 4 — GITHUB STATS (ANIMATED)                       -->
+<!--  SECTION 4 — GITHUB STATS (RELIABLE)                       -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
 <div align="center">
@@ -121,45 +120,16 @@
 
 <div align="center">
 
-<!-- Stats card + Top languages side by side -->
-<!-- Note: Removed count_private=true and rank_icon=github to prevent API errors -->
-<a href="https://github.com/m-farhan-hamim">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=m-farhan-hamim&show_icons=true&theme=tokyonight&bg_color=0d1117&hide_border=true&include_all_commits=true" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=m-farhan-hamim&layout=compact&theme=tokyonight&bg_color=0d1117&hide_border=true&langs_count=8" />
-</a>
-
-<br /><br />
-
-<!-- Streak stats -->
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=m-farhan-hamim&theme=tokyonight&background=0d1117&hide_border=true" alt="GitHub Streak" />
-
-<br /><br />
-
-<!-- Trophy cabinet -->
-<img src="https://github-profile-trophy.vercel.app/?username=m-farhan-hamim&theme=tokyonight&no-frame=true&column=7&margin-w=10&margin-h=10" alt="GitHub Trophies" />
+<!-- I kept the two that were working perfectly in your screenshot! -->
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=m-farhan-hamim&layout=compact&theme=tokyonight&bg_color=0d1117&hide_border=true&langs_count=8" />
+<img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=m-farhan-hamim&theme=tokyonight&background=0d1117&hide_border=true" alt="GitHub Streak" />
 
 </div>
 
 <br />
 
 <!-- ═══════════════════════════════════════════════════════════ -->
-<!--  SECTION 5 — ACTIVITY GRAPH                                -->
-<!-- ═══════════════════════════════════════════════════════════ -->
-
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1f6feb,100:58A6FF&height=2&width=1000" />
-</div>
-
-<h2 align="center">📈 Contribution Activity</h2>
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=m-farhan-hamim&bg_color=0d1117&color=58A6FF&line=1f6feb&point=ffffff&area=true&hide_border=true&custom_title=My%20Contribution%20Graph" width="100%" />
-</div>
-
-<br />
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-<!--  SECTION 6 — CURRENT FOCUS                                 -->
+<!--  SECTION 5 — CURRENT FOCUS                                 -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
 <div align="center">
@@ -181,7 +151,7 @@
 <br />
 
 <!-- ═══════════════════════════════════════════════════════════ -->
-<!--  SECTION 7 — FEATURED PROJECTS                             -->
+<!--  SECTION 6 — FEATURED PROJECTS (BULLETPROOF DESIGN)        -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
 <div align="center">
@@ -196,143 +166,86 @@
 
 <br />
 
-<!-- ── Project 1: NetShield ── -->
+<!-- Project 1 -->
 <table align="center" width="95%">
   <tr>
-    <td width="60%" valign="top">
+    <td width="70%" valign="top">
       <h3>🛡️ <a href="https://github.com/m-farhan-hamim/NetShield-DNS-Resolver-by-PSBDx">NetShield DNS Resolver</a></h3>
-      <p>
-        A powerful <strong>local DNS resolver</strong>, ad/tracker sinkhole, and real-time traffic monitor for Android.
-        NetShield runs as a device-wide local VPN or a local UDP DNS server, giving you complete control over your
-        device's network traffic — blocking ads, trackers, and malicious domains at the DNS level.
-      </p>
+      <p>A powerful <strong>local DNS resolver</strong>, ad/tracker sinkhole, and real-time traffic monitor for Android. Blocks ads, trackers, and malicious domains at the DNS level.</p>
       <p>
         <img src="https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white" />
         <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=java&logoColor=white" />
         <img src="https://img.shields.io/badge/DNS-1f6feb?style=flat-square" />
-        <img src="https://img.shields.io/badge/F--Droid-1976D2?style=flat-square" />
       </p>
     </td>
-    <td width="40%" align="center">
+    <td width="30%" align="center">
       <a href="https://github.com/m-farhan-hamim/NetShield-DNS-Resolver-by-PSBDx">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=m-farhan-hamim&repo=NetShield-DNS-Resolver-by-PSBDx&theme=tokyonight&bg_color=0d1117&hide_border=true&show_owner=true" />
+        <img src="https://img.shields.io/badge/View_Repo-1f6feb?style=for-the-badge&logo=github&logoColor=white" />
       </a>
     </td>
   </tr>
 </table>
 
-<br />
+<hr width="80%" />
 
-<!-- ── Project 2: PSBDx-SVN ── -->
+<!-- Project 2 -->
 <table align="center" width="95%">
   <tr>
-    <td width="40%" align="center">
-      <a href="https://github.com/m-farhan-hamim/PSBDx-SVN">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=m-farhan-hamim&repo=PSBDx-SVN&theme=tokyonight&bg_color=0d1117&hide_border=true&show_owner=true" />
-      </a>
-    </td>
-    <td width="60%" valign="top">
+    <td width="70%" valign="top">
       <h3>📦 <a href="https://github.com/m-farhan-hamim/PSBDx-SVN">PSBDx-SVN</a></h3>
-      <p>
-        A comprehensive <strong>SVN repository manager</strong> designed for WordPress plugin and theme developers.
-        This tool streamlines the process of committing to the WordPress.org SVN repository, managing tags,
-        branches, and trunk directories — making plugin deployment faster and less error-prone.
-      </p>
+      <p>A comprehensive <strong>SVN repository manager</strong> for WordPress developers. Streamlines committing to the WordPress.org SVN repository, managing tags, branches, and trunk directories.</p>
       <p>
         <img src="https://img.shields.io/badge/WordPress-21759B?style=flat-square&logo=wordpress&logoColor=white" />
-        <img src="https://img.shields.io/badge/SVN-809CC9?style=flat-square&logo=subversion&logoColor=white" />
         <img src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white" />
         <img src="https://img.shields.io/badge/CLI-4EAA25?style=flat-square&logo=gnu-bash&logoColor=white" />
       </p>
     </td>
+    <td width="30%" align="center">
+      <a href="https://github.com/m-farhan-hamim/PSBDx-SVN">
+        <img src="https://img.shields.io/badge/View_Repo-1f6feb?style=for-the-badge&logo=github&logoColor=white" />
+      </a>
+    </td>
   </tr>
 </table>
 
-<br />
+<hr width="80%" />
 
-<!-- ── Project 3: PSBDx-DevBrowser ── -->
+<!-- Project 3 -->
 <table align="center" width="95%">
   <tr>
-    <td width="60%" valign="top">
+    <td width="70%" valign="top">
       <h3>🌐 <a href="https://github.com/m-farhan-hamim/PSBDx-DevBrowser">PSBDx DevBrowser</a></h3>
-      <p>
-        A minimal, distraction-free <strong>web browser built for developers</strong>. DevBrowser provides a clean
-        environment for testing web applications without the clutter of standard browsers — featuring minimal
-        controls, a focus mode, and quick access to developer tools. It's the perfect companion for testing
-        WordPress plugins and themes across different environments.
-      </p>
+      <p>A minimal, distraction-free <strong>web browser built for developers</strong>. Features minimal controls, a focus mode, and quick access to developer tools.</p>
       <p>
         <img src="https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white" />
         <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
-        <img src="https://img.shields.io/badge/Dev_Tools-1f6feb?style=flat-square" />
       </p>
     </td>
-    <td width="40%" align="center">
+    <td width="30%" align="center">
       <a href="https://github.com/m-farhan-hamim/PSBDx-DevBrowser">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=m-farhan-hamim&repo=PSBDx-DevBrowser&theme=tokyonight&bg_color=0d1117&hide_border=true&show_owner=true" />
+        <img src="https://img.shields.io/badge/View_Repo-1f6feb?style=for-the-badge&logo=github&logoColor=white" />
       </a>
     </td>
   </tr>
 </table>
 
-<br />
+<hr width="80%" />
 
-<!-- ── Project 4: PSRM-Forms-App ── -->
+<!-- Project 4 -->
 <table align="center" width="95%">
   <tr>
-    <td width="40%" align="center">
-      <a href="https://github.com/m-farhan-hamim/PSRM-Forms-App">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=m-farhan-hamim&repo=PSRM-Forms-App&theme=tokyonight&bg_color=0d1117&hide_border=true&show_owner=true" />
-      </a>
-    </td>
-    <td width="60%" valign="top">
+    <td width="70%" valign="top">
       <h3>📋 <a href="https://github.com/m-farhan-hamim/PSRM-Forms-App">PSRM Forms App</a></h3>
-      <p>
-        A powerful <strong>drag-and-drop form builder</strong> companion application for the PSBDx Smart Report
-        Management system. PSRM Forms App lets you create custom report forms with ten field types, per-form
-        rate limiting, captcha protection, and custom statuses — all without writing a single line of code.
-        Reports are submitted via AJAX and managed through a dedicated admin interface.
-      </p>
+      <p>A powerful <strong>drag-and-drop form builder</strong> companion for the PSBDx Smart Report Management system. Create custom report forms with ten field types and per-form rate limiting.</p>
       <p>
         <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" />
         <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white" />
-        <img src="https://img.shields.io/badge/WordPress-21759B?style=flat-square&logo=wordpress&logoColor=white" />
-        <img src="https://img.shields.io/badge/AJAX-0769AD?style=flat-square&logo=jquery&logoColor=white" />
       </p>
     </td>
-  </tr>
-</table>
-
-<br />
-
-<!-- ── Project 5 & 6: WordPress Plugins ── -->
-<table align="center" width="95%">
-  <tr>
-    <td width="50%" valign="top">
-      <h3 align="center">🧩 PSBDx Custom Product Fields</h3>
-      <p align="center">
-        Add dynamic custom fields to WooCommerce product pages. Values carry
-        seamlessly through cart, checkout, and order screens — with optional
-        price adjustments based on user input.
-      </p>
-      <p align="center">
-        <img src="https://img.shields.io/badge/WooCommerce-96588A?style=flat-square&logo=woocommerce&logoColor=white" />
-        <img src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white" />
-        <img src="https://img.shields.io/badge/WP_5.8+-21759B?style=flat-square" />
-      </p>
-    </td>
-    <td width="50%" valign="top">
-      <h3 align="center">📋 PSBDx Smart Report Management</h3>
-      <p align="center">
-        AJAX-powered issue reporting for e‑commerce orders, products, and
-        courses. Includes rate limiting, order auto‑linking, and a dedicated
-        admin dashboard widget — no page reloads.
-      </p>
-      <p align="center">
-        <img src="https://img.shields.io/badge/AJAX-0769AD?style=flat-square&logo=jquery&logoColor=white" />
-        <img src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white" />
-        <img src="https://img.shields.io/badge/WP_5.8+-21759B?style=flat-square" />
-      </p>
+    <td width="30%" align="center">
+      <a href="https://github.com/m-farhan-hamim/PSRM-Forms-App">
+        <img src="https://img.shields.io/badge/View_Repo-1f6feb?style=for-the-badge&logo=github&logoColor=white" />
+      </a>
     </td>
   </tr>
 </table>
@@ -340,7 +253,7 @@
 <br />
 
 <!-- ═══════════════════════════════════════════════════════════ -->
-<!--  SECTION 8 — WORDPRESS CONTRIBUTIONS                       -->
+<!--  SECTION 7 — WORDPRESS CONTRIBUTIONS                       -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
 <div align="center">
@@ -373,25 +286,7 @@
 <br />
 
 <!-- ═══════════════════════════════════════════════════════════ -->
-<!--  SECTION 9 — DEV QUOTE                                     -->
-<!-- ═══════════════════════════════════════════════════════════ -->
-
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1f6feb,100:58A6FF&height=2&width=1000" />
-</div>
-
-<h2 align="center">💭 Words I Live By</h2>
-
-<div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight&quote=Simplicity%20is%20the%20soul%20of%20efficiency.&author=Thomas%20Merton" />
-  <br /><br />
-  <sub><i>"Simplicity is the soul of efficiency." — Thomas Merton</i></sub>
-</div>
-
-<br />
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-<!--  SECTION 10 — CONNECT                                      -->
+<!--  SECTION 8 — CONNECT                                       -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
 <div align="center">
