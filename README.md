@@ -92,18 +92,9 @@
   <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1f6feb,100:58A6FF&height=2&width=1000" />
 </div>
 <h2 align="center">⚡ Dynamic Activity</h2>
-
-<!-- RECENT_ACTIVITY:start -->
-
-| 🚀 Repository | 🛠️ Activity | 📅 Date |
-| :--- | :--- | :--- |
-| **[m-farhan-hamim/m-farhan-hamim](https://github.com/m-farhan-hamim/m-farhan-hamim)** | ⚡ Pushed commits | 2026-10-08 |
-| **[m-farhan-hamim/NetShield-DNS-Resolver-by-PSBDx](https://github.com/m-farhan-hamim/NetShield-DNS-Resolver-by-PSBDx)** | ⚡ Pushed commits | 2026-10-08 |
-| **[m-farhan-hamim/PSBDx-SVN](https://github.com/m-farhan-hamim/PSBDx-SVN)** | ⚡ Pushed commits | 2026-10-08 |
-
-
-<!-- RECENT_ACTIVITY:end -->
-
+<div align="center">
+  <img src="assets/activity.svg" alt="Recent Activity" width="100%" />
+</div>
 <br />
 
 <!-- SECTION 6 — TOP STARRED REPOSITORIES (AUTO-UPDATED) -->
@@ -111,18 +102,9 @@
   <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1f6feb,100:58A6FF&height=2&width=1000" />
 </div>
 <h2 align="center">⭐ Top Starred Repositories</h2>
-
-<!-- TOP_STARRED:start -->
-
-| Repository | Stars | Description |
-| :--- | :--- | :--- |
-| **[m-farhan-hamim](https://github.com/m-farhan-hamim/m-farhan-hamim)** | ⭐ 0 | No description provided. |
-| **[PSBDx-SVN](https://github.com/m-farhan-hamim/PSBDx-SVN)** | ⭐ 1 | An Android SVN App. |
-| **[Notifications](https://github.com/m-farhan-hamim/Notifications)** | ⭐ 0 | Notice: This repository is dedicated to my open-source f-... |
-
-
-<!-- TOP_STARRED:end -->
-
+<div align="center">
+  <img src="assets/starred.svg" alt="Top Starred Repos" width="100%" />
+</div>
 <br />
 
 <!-- SECTION 7 — CURRENT FOCUS -->
@@ -130,13 +112,13 @@
   <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1f6feb,100:58A6FF&height=2&width=1000" />
 </div>
 <h2 align="center">🎯 Current Focus</h2>
-<div align="center">
+
 | 🚀 Building | 📚 Learning | 🤝 Contributing |
 | :---: | :---: | :---: |
 | Scaling **NetShield DNS Resolver** for enterprise networks | Advanced React patterns for **PSRM Forms App** | More translations for the WordPress **Polyglots** team |
 | Enhancing **PSBDx-SVN** with automated tagging | Electron best practices for **DevBrowser** | Mentoring new plugin developers on WP.org forums |
 | Expanding WooCommerce integrations for **PSBDx** | Modern PHP 8+ features for plugin architecture | Open-sourcing internal PSBDx dev tools |
-</div>
+
 <br />
 
 <!-- SECTION 8 — FEATURED PROJECTS -->
