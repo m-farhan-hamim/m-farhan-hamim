@@ -1,0 +1,32 @@
+name: Update Dynamic Sections
+
+on:
+  schedule:
+    - cron: "0 */12 * * *" # Runs every 12 hours
+  workflow_dispatch: # Allows you to run it manually
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Fetch Recent Activity
+        uses: Readme-Workflows/recent-activity@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          CONFIG_FILE: '.github/recent-activity.config.yml'
+      
+      - name: Fetch Top Starred Repos
+        uses: zachary-cauchi/github-action-hot-repos@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NUM_REPOS: 3
+          OUTPUT_FILE: 'top-starred-repos.md'
+          SORT_BY: 'stars'
