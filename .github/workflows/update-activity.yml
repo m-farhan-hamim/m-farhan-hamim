@@ -4,9 +4,6 @@ on:
   schedule:
     - cron: "0 */12 * * *" # Runs every 12 hours
   workflow_dispatch: # Allows you to run it manually
-  push:
-    branches:
-      - main
 
 jobs:
   update-readme:
@@ -22,11 +19,28 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           CONFIG_FILE: '.github/recent-activity.config.yml'
-      
+          
       - name: Fetch Top Starred Repos
-        uses: zachary-cauchi/github-action-hot-repos@v2
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NUM_REPOS: 3
-          OUTPUT_FILE: 'top-starred-repos.md'
-          SORT_BY: 'stars'
+        run: |
+          # Fetch top 3 starred repos using GitHub API
+          curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/users/m-farhan-hamim/repos?sort=stars&per_page=3" | \
+            jq -r '.[] | "| **[\(.name)](\(.html_url))** | ⭐ \(.stargazers_count) | \(.description // "No description") |"' > starred.md
+          
+          # Create the beautiful table layout
+          echo "<!-- TOP_STARRED:start -->" > top_starred_temp.md
+          echo "| Repository | Stars | Description |" >> top_starred_temp.md
+          echo "| :--- | :--- | :--- |" >> top_starred_temp.md
+          cat starred.md >> top_starred_temp.md
+          echo "<!-- TOP_STARRED:end -->" >> top_starred_temp.md
+          
+          # Inject the table into README.md
+          awk '/<!-- TOP_STARRED:start -->/{system("cat top_starred_temp.md"); skip=1} /<!-- TOP_STARRED:end -->/{skip=0; next} !skip' README.md > README_new.md
+          mv README_new.md README.md
+          
+          # Commit and push changes
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git commit -m "⚡ Auto-update: Recent Activity & Top Starred Repos" || echo "No changes to commit"
+          git push
