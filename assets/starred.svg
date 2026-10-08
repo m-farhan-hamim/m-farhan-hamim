@@ -12,33 +12,32 @@
       </feMerge>
     </filter>
   </defs>
+  <style>
+    @keyframes slideIn { 0% { opacity: 0; transform: translateX(30px); } 100% { opacity: 1; transform: translateX(0); } }
+    @keyframes rotateStar { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes pulseStar { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+    .row { animation: slideIn 0.6s ease-out forwards; }
+    .star { animation: rotateStar 10s linear infinite, pulseStar 2s ease-in-out infinite; transform-origin: 740px 35px; }
+  </style>
   <rect width="100%" height="100%" rx="16" fill="url(#bgGrad)" stroke="#30363d" stroke-width="1" />
   <text x="30" y="40" font-family="system-ui, sans-serif" font-size="20" fill="#58A6FF" font-weight="bold">⭐ Top Starred Repositories</text>
   <g transform="translate(740, 35)">
-    <path d="M0,-8 L2.5,-2.5 L8,-2.5 L3.5,1 L5,6.5 L0,3 L-5,6.5 L-3.5,1 L-8,-2.5 L-2.5,-2.5 Z" fill="#D29922" filter="url(#glow)">
-      <animateTransform attributeName="transform" type="rotate" values="0;10;-10;0" dur="4s" repeatCount="indefinite" />
-    </path>
+    <path d="M0,-8 L2.5,-2.5 L8,-2.5 L3.5,1 L5,6.5 L0,3 L-5,6.5 L-3.5,1 L-8,-2.5 L-2.5,-2.5 Z" fill="#D29922" filter="url(#glow)" class="star" />
   </g>
   <line x1="20" y1="55" x2="780" y2="55" stroke="#30363d" stroke-width="1" />
-  <g opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.1s" />
-    <animateTransform attributeName="transform" type="translate" values="30,0;0,0" dur="0.5s" fill="freeze" begin="0.1s" />
+  <g class="row" style="animation-delay: 0.1s">
     <text x="30" y="85" font-family="system-ui, sans-serif" font-size="15" fill="#58A6FF" font-weight="bold">NetShield-DNS-Resolver-by-PSBDx</text>
     <text x="300" y="85" font-family="system-ui, sans-serif" font-size="15" fill="#D29922">⭐ 11</text>
     <text x="420" y="85" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E">A local DNS resolver, ad/tracker sinkhole ...</text>
   </g>
-  <g opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.2s" />
-    <animateTransform attributeName="transform" type="translate" values="30,0;0,0" dur="0.5s" fill="freeze" begin="0.2s" />
-    <text x="30" y="130" font-family="system-ui, sans-serif" font-size="15" fill="#58A6FF" font-weight="bold">PSBDx-DevBrowser</text>
+  <g class="row" style="animation-delay: 0.2s">
+    <text x="30" y="130" font-family="system-ui, sans-serif" font-size="15" fill="#58A6FF" font-weight="bold">m-farhan-hamim</text>
     <text x="300" y="130" font-family="system-ui, sans-serif" font-size="15" fill="#D29922">⭐ 1</text>
-    <text x="420" y="130" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E">A complete android browser with developer ...</text>
+    <text x="420" y="130" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E">No description provided.</text>
   </g>
-  <g opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.30000000000000004s" />
-    <animateTransform attributeName="transform" type="translate" values="30,0;0,0" dur="0.5s" fill="freeze" begin="0.30000000000000004s" />
-    <text x="30" y="175" font-family="system-ui, sans-serif" font-size="15" fill="#58A6FF" font-weight="bold">PSBDx-SVN</text>
+  <g class="row" style="animation-delay: 0.30000000000000004s">
+    <text x="30" y="175" font-family="system-ui, sans-serif" font-size="15" fill="#58A6FF" font-weight="bold">PSBDx-DevBrowser</text>
     <text x="300" y="175" font-family="system-ui, sans-serif" font-size="15" fill="#D29922">⭐ 1</text>
-    <text x="420" y="175" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E">An Android SVN App.</text>
+    <text x="420" y="175" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E">A complete android browser with developer ...</text>
   </g>
 </svg>

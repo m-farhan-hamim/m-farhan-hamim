@@ -4,17 +4,16 @@
       <stop offset="0%" stop-color="#0d1117" />
       <stop offset="100%" stop-color="#1f6feb" />
     </linearGradient>
+    <style>
+      @keyframes floatUp { 0% { transform: translateY(0px); } 50% { transform: translateY(-5px); } 100% { transform: translateY(0px); } }
+      @keyframes floatDown { 0% { transform: translateY(0px); } 50% { transform: translateY(5px); } 100% { transform: translateY(0px); } }
+      @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+      .wave-anim { animation: floatUp 4s ease-in-out infinite; }
+      .text-anim { animation: fadeIn 1s ease-out forwards; }
+    </style>
   </defs>
   <rect width="100%" height="100%" fill="#0d1117" />
-  <path d="M0,180 Q200,140 400,180 T800,180 L800,220 L0,220 Z" fill="url(#waveGrad)" opacity="0.8">
-    <animateTransform attributeName="transform" type="translate" values="0,0;0,-5;0,0" dur="4s" repeatCount="indefinite" />
-  </path>
-  <text x="400" y="90" font-family="system-ui, -apple-system, sans-serif" font-size="36" fill="#ffffff" font-weight="bold" text-anchor="middle">
-    M. Farhan Hamim
-    <animate attributeName="opacity" values="0;1" dur="0.8s" fill="freeze" />
-  </text>
-  <text x="400" y="130" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#8B949E" text-anchor="middle">
-    CEO @ PSBDx | WordPress Plugin Developer
-    <animate attributeName="opacity" values="0;1" dur="0.8s" fill="freeze" begin="0.3s" />
-  </text>
+  <path d="M0,180 Q200,140 400,180 T800,180 L800,220 L0,220 Z" fill="url(#waveGrad)" opacity="0.8" class="wave-anim" />
+  <text x="400" y="90" font-family="system-ui, -apple-system, sans-serif" font-size="36" fill="#ffffff" font-weight="bold" text-anchor="middle" class="text-anim">M. Farhan Hamim</text>
+  <text x="400" y="130" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#8B949E" text-anchor="middle" class="text-anim" style="animation-delay: 0.3s">CEO @ PSBDx | WordPress Plugin Developer</text>
 </svg>
