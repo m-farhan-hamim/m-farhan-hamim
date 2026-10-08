@@ -156,7 +156,7 @@
 </table>
 <br />
 
-<!-- SECTION 9 — WORDPRESS CONTRIBUTIONS -->
+<!-- SECTION 9 — WORDPRESS CONTRIBUTIONS & ORCID -->
 <div align="center">
   <img src="assets/divider.svg" alt="Divider" width="100%" />
 </div>
@@ -167,7 +167,17 @@
 </div>
 <br />
 
-<!-- SECTION 10 — DEV QUOTE -->
+<!-- SECTION 10 — ORCID -->
+<div align="center">
+  <img src="assets/divider.svg" alt="Divider" width="100%" />
+</div>
+<h2 align="center">🔬 ORCID Profile</h2>
+<div align="center">
+  <img src="assets/orcid.svg" alt="ORCID" width="100%" />
+</div>
+<br />
+
+<!-- SECTION 11 — DEV QUOTE -->
 <div align="center">
   <img src="assets/divider.svg" alt="Divider" width="100%" />
 </div>
@@ -185,7 +195,7 @@
 </div>
 <br />
 
-<!-- SECTION 11 — CONNECT -->
+<!-- SECTION 12 — CONNECT -->
 <div align="center">
   <img src="assets/divider.svg" alt="Divider" width="100%" />
 </div>
