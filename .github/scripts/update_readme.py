@@ -48,12 +48,19 @@ def fetch_contributions():
     try:
         url = f"https://github-contributions-api.jogruber.de/v4/{USERNAME}"
         response = requests.get(url)
-        return response.json() if response.status_code == 200 else None
+        if response.status_code == 200:
+            data = response.json()
+            if data.get("totalContributions", 0) > 0:
+                return data
+        # Fallback URL
+        url2 = f"https://github-contributions-api.vercel.app/api?username={USERNAME}"
+        response2 = requests.get(url2)
+        return response2.json() if response2.status_code == 200 else None
     except: return None
 
 def calculate_streaks(contributions_data):
     if not contributions_data: return 0, 0
-    dates = [d["date"] for d in contributions_data["contributions"] if d["count"] > 0]
+    dates = [d["date"] for d in contributions_data.get("contributions", []) if d.get("count", 0) > 0]
     dates.sort()
     if not dates: return 0, 0
     current, longest, temp, prev = 0, 0, 0, None
@@ -67,7 +74,7 @@ def calculate_streaks(contributions_data):
     return current, longest
 
 # ═══════════════════════════════════════════════════════════════
-#  SVG GENERATORS
+#  SVG GENERATORS WITH CSS ANIMATIONS
 # ═══════════════════════════════════════════════════════════════
 
 def generate_wave_svg(filename, height, section, is_header=True):
@@ -75,26 +82,24 @@ def generate_wave_svg(filename, height, section, is_header=True):
     wave_path = f"M0,{height-40} Q200,{height-80} 400,{height-40} T800,{height-40} L800,{height} L0,{height} Z" if is_header else f"M0,40 Q200,80 400,40 T800,40 L800,0 L0,0 Z"
     text_y = 90 if is_header else height - 60
     desc_y = 130 if is_header else height - 30
-    anim = '<animateTransform attributeName="transform" type="translate" values="0,0;0,-5;0,0" dur="4s" repeatCount="indefinite" />' if is_header else '<animateTransform attributeName="transform" type="translate" values="0,0;0,5;0,0" dur="4s" repeatCount="indefinite" />'
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="800" height="{height}" viewBox="0 0 800 {height}">
   <defs>
     <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="{color1}" />
       <stop offset="100%" stop-color="{color2}" />
     </linearGradient>
+    <style>
+      @keyframes floatUp {{ 0% {{ transform: translateY(0px); }} 50% {{ transform: translateY(-5px); }} 100% {{ transform: translateY(0px); }} }}
+      @keyframes floatDown {{ 0% {{ transform: translateY(0px); }} 50% {{ transform: translateY(5px); }} 100% {{ transform: translateY(0px); }} }}
+      @keyframes fadeIn {{ 0% {{ opacity: 0; }} 100% {{ opacity: 1; }} }}
+      .wave-anim {{ animation: {'floatUp' if is_header else 'floatDown'} 4s ease-in-out infinite; }}
+      .text-anim {{ animation: fadeIn 1s ease-out forwards; }}
+    </style>
   </defs>
   <rect width="100%" height="100%" fill="#0d1117" />
-  <path d="{wave_path}" fill="url(#waveGrad)" opacity="0.8">
-    {anim}
-  </path>
-  <text x="400" y="{text_y}" font-family="system-ui, -apple-system, sans-serif" font-size="36" fill="#ffffff" font-weight="bold" text-anchor="middle">
-    M. Farhan Hamim
-    <animate attributeName="opacity" values="0;1" dur="0.8s" fill="freeze" />
-  </text>
-  <text x="400" y="{desc_y}" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#8B949E" text-anchor="middle">
-    CEO @ PSBDx | WordPress Plugin Developer
-    <animate attributeName="opacity" values="0;1" dur="0.8s" fill="freeze" begin="0.3s" />
-  </text>
+  <path d="{wave_path}" fill="url(#waveGrad)" opacity="0.8" class="wave-anim" />
+  <text x="400" y="{text_y}" font-family="system-ui, -apple-system, sans-serif" font-size="36" fill="#ffffff" font-weight="bold" text-anchor="middle" class="text-anim">M. Farhan Hamim</text>
+  <text x="400" y="{desc_y}" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#8B949E" text-anchor="middle" class="text-anim" style="animation-delay: 0.3s">CEO @ PSBDx | WordPress Plugin Developer</text>
 </svg>'''
     with open(f"assets/{filename}", "w", encoding="utf-8") as f: f.write(svg)
 
@@ -113,17 +118,15 @@ def generate_divider_svg():
 
 def generate_social_svg():
     svg = '''<svg xmlns="http://www.w3.org/2000/svg" width="800" height="60" viewBox="0 0 800 60">
-  <rect x="180" y="10" width="120" height="36" rx="18" fill="#0d1117" stroke="#1f6feb" stroke-width="1.5">
-    <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite" />
-  </rect>
+  <style>
+    @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
+    .badge { animation: pulse 2s ease-in-out infinite; }
+  </style>
+  <rect x="180" y="10" width="120" height="36" rx="18" fill="#0d1117" stroke="#1f6feb" stroke-width="1.5" class="badge" />
   <text x="240" y="33" font-family="system-ui, sans-serif" font-size="14" fill="#58A6FF" text-anchor="middle">GitHub</text>
-  <rect x="320" y="10" width="160" height="36" rx="18" fill="#0d1117" stroke="#1f6feb" stroke-width="1.5">
-    <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite" begin="0.5s" />
-  </rect>
+  <rect x="320" y="10" width="160" height="36" rx="18" fill="#0d1117" stroke="#1f6feb" stroke-width="1.5" class="badge" style="animation-delay: 0.5s" />
   <text x="400" y="33" font-family="system-ui, sans-serif" font-size="14" fill="#58A6FF" text-anchor="middle">WordPress</text>
-  <rect x="500" y="10" width="120" height="36" rx="18" fill="#0d1117" stroke="#1f6feb" stroke-width="1.5">
-    <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite" begin="1s" />
-  </rect>
+  <rect x="500" y="10" width="120" height="36" rx="18" fill="#0d1117" stroke="#1f6feb" stroke-width="1.5" class="badge" style="animation-delay: 1s" />
   <text x="560" y="33" font-family="system-ui, sans-serif" font-size="14" fill="#58A6FF" text-anchor="middle">PSBDx</text>
 </svg>'''
     with open("assets/social.svg", "w", encoding="utf-8") as f: f.write(svg)
@@ -147,20 +150,8 @@ def generate_bento_svg():
     with open("assets/bento.svg", "w", encoding="utf-8") as f: f.write(svg)
 
 def generate_tech_stack_svg():
-    # High-quality vector icons embedded as SVG paths
-    techs = [
-        ("PHP", "#777BB4", "M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 2.4c5.3 0 9.6 4.3 9.6 9.6s-4.3 9.6-9.6 9.6S2.4 17.3 2.4 12 6.7 2.4 12 2.4z"),
-        ("WordPress", "#21759B", "M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 2.4c5.3 0 9.6 4.3 9.6 9.6s-4.3 9.6-9.6 9.6S2.4 17.3 2.4 12 6.7 2.4 12 2.4z"),
-        ("JavaScript", "#F7DF1E", "M0 0h24v24H0V0zm22.5 12.6v-2.4h-3.6V7.5h-2.4v2.7h-3.6v2.4h3.6v2.7h2.4v-2.7h3.6z"),
-        ("TypeScript", "#3178C6", "M0 0h24v24H0V0zm12 2.4c5.3 0 9.6 4.3 9.6 9.6s-4.3 9.6-9.6 9.6S2.4 17.3 2.4 12 6.7 2.4 12 2.4z"),
-        ("HTML5", "#E34F26", "M0 0h24v24H0V0zm12 2.4c5.3 0 9.6 4.3 9.6 9.6s-4.3 9.6-9.6 9.6S2.4 17.3 2.4 12 6.7 2.4 12 2.4z"),
-        ("CSS3", "#1572B6", "M0 0h24v24H0V0zm12 2.4c5.3 0 9.6 4.3 9.6 9.6s-4.3 9.6-9.6 9.6S2.4 17.3 2.4 12 6.7 2.4 12 2.4z"),
-        ("MySQL", "#4479A1", "M0 0h24v24H0V0zm12 2.4c5.3 0 9.6 4.3 9.6 9.6s-4.3 9.6-9.6 9.6S2.4 17.3 2.4 12 6.7 2.4 12 2.4z"),
-        ("Git", "#F05032", "M0 0h24v24H0V0zm12 2.4c5.3 0 9.6 4.3 9.6 9.6s-4.3 9.6-9.6 9.6S2.4 17.3 2.4 12 6.7 2.4 12 2.4z"),
-        ("GitHub", "#181717", "M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 2.4c5.3 0 9.6 4.3 9.6 9.6s-4.3 9.6-9.6 9.6S2.4 17.3 2.4 12 6.7 2.4 12 2.4z"),
-        ("Linux", "#FCC624", "M0 0h24v24H0V0zm12 2.4c5.3 0 9.6 4.3 9.6 9.6s-4.3 9.6-9.6 9.6S2.4 17.3 2.4 12 6.7 2.4 12 2.4z"),
-        ("Docker", "#2496ED", "M0 0h24v24H0V0zm12 2.4c5.3 0 9.6 4.3 9.6 9.6s-4.3 9.6-9.6 9.6S2.4 17.3 2.4 12 6.7 2.4 12 2.4z"),
-    ]
+    techs = ["PHP", "WordPress", "JavaScript", "TypeScript", "HTML5", "CSS3", "MySQL", "Git", "GitHub", "Linux", "Docker"]
+    colors = ["#777BB4", "#21759B", "#F7DF1E", "#3178C6", "#E34F26", "#1572B6", "#4479A1", "#F05032", "#181717", "#FCC624", "#2496ED"]
     height = 100
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="800" height="{height}" viewBox="0 0 800 {height}">
   <defs>
@@ -169,15 +160,19 @@ def generate_tech_stack_svg():
       <stop offset="100%" stop-color="#161b22" />
     </linearGradient>
   </defs>
+  <style>
+    @keyframes fadeInUp {{ 0% {{ opacity: 0; transform: translateY(10px); }} 100% {{ opacity: 1; transform: translateY(0); }} }}
+    .tech {{ animation: fadeInUp 0.6s ease-out forwards; }}
+    @keyframes glow {{ 0% {{ box-shadow: 0 0 5px currentColor; }} 50% {{ box-shadow: 0 0 15px currentColor; }} 100% {{ box-shadow: 0 0 5px currentColor; }} }}
+    .glow-rect {{ animation: glow 2s ease-in-out infinite; }}
+  </style>
   <rect width="100%" height="100%" rx="12" fill="url(#bgGrad)" stroke="#30363d" stroke-width="1" />
   <text x="400" y="30" font-family="system-ui, sans-serif" font-size="18" fill="#58A6FF" text-anchor="middle" font-weight="bold">🛠️ Tech Stack</text>
 '''
     x = 40
-    for i, (name, color, path) in enumerate(techs):
-        svg += f'''  <g opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="{0.1*i}s" />
-    <animateTransform attributeName="transform" type="translate" values="0,10;0,0" dur="0.5s" fill="freeze" begin="{0.1*i}s" />
-    <rect x="{x}" y="50" width="56" height="36" rx="8" fill="{color}" opacity="0.15" stroke="{color}" stroke-width="1.5" />
+    for i, (name, color) in enumerate(zip(techs, colors)):
+        svg += f'''  <g class="tech" style="animation-delay: {0.05*i}s">
+    <rect x="{x}" y="50" width="56" height="36" rx="8" fill="{color}" opacity="0.15" stroke="{color}" stroke-width="1.5" class="glow-rect" style="color: {color}" />
     <text x="{x+28}" y="73" font-family="system-ui, sans-serif" font-size="9" fill="{color}" text-anchor="middle" font-weight="bold">{name}</text>
   </g>
 '''
@@ -187,23 +182,20 @@ def generate_tech_stack_svg():
 
 def generate_wp_badges_svg():
     svg = '''<svg xmlns="http://www.w3.org/2000/svg" width="800" height="80" viewBox="0 0 800 80">
-  <rect x="100" y="10" width="180" height="36" rx="18" fill="#21759B">
-    <animate attributeName="opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite" />
-  </rect>
+  <style>
+    @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
+    .badge { animation: pulse 2s ease-in-out infinite; }
+  </style>
+  <rect x="100" y="10" width="180" height="36" rx="18" fill="#21759B" class="badge" />
   <text x="190" y="33" font-family="system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Translation Contributor</text>
-  <rect x="300" y="10" width="180" height="36" rx="18" fill="#21759B">
-    <animate attributeName="opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite" begin="0.5s" />
-  </rect>
+  <rect x="300" y="10" width="180" height="36" rx="18" fill="#21759B" class="badge" style="animation-delay: 0.5s" />
   <text x="390" y="33" font-family="system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Translation Editor '26</text>
-  <rect x="500" y="10" width="180" height="36" rx="18" fill="#21759B">
-    <animate attributeName="opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite" begin="1s" />
-  </rect>
+  <rect x="500" y="10" width="180" height="36" rx="18" fill="#21759B" class="badge" style="animation-delay: 1s" />
   <text x="590" y="33" font-family="system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Plugin Developer</text>
 </svg>'''
     with open("assets/wp_badges.svg", "w", encoding="utf-8") as f: f.write(svg)
 
 def generate_orcid_svg():
-    # Official ORCID color: #A6CE39
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="800" height="80" viewBox="0 0 800 80">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -211,15 +203,21 @@ def generate_orcid_svg():
       <stop offset="100%" stop-color="#161b22" />
     </linearGradient>
   </defs>
+  <style>
+    @keyframes float {{ 0% {{ transform: translateY(0px); }} 50% {{ transform: translateY(-5px); }} 100% {{ transform: translateY(0px); }} }}
+    @keyframes glow {{ 0% {{ box-shadow: 0 0 5px #A6CE39; }} 50% {{ box-shadow: 0 0 20px #A6CE39; }} 100% {{ box-shadow: 0 0 5px #A6CE39; }} }}
+    .orcid-icon {{ animation: float 3s ease-in-out infinite; }}
+    .orcid-btn {{ animation: glow 2s ease-in-out infinite; }}
+  </style>
   <rect width="100%" height="100%" rx="12" fill="url(#bgGrad)" stroke="#A6CE39" stroke-width="1.5" />
-  <g transform="translate(30, 25)">
+  <g transform="translate(30, 25)" class="orcid-icon">
     <circle cx="15" cy="15" r="15" fill="#A6CE39" />
     <path d="M10 10h3v10h-3V10zm1.5-3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" fill="#ffffff" />
-    <text x="50" y="12" font-family="system-ui, sans-serif" font-size="14" fill="#A6CE39" font-weight="bold">ORCID</text>
-    <text x="50" y="30" font-family="system-ui, sans-serif" font-size="12" fill="#8B949E">0009-0004-6864-8767</text>
   </g>
-  <a href="https://orcid.org/0009-0004-6864-8767" target="_blank">
-    <rect x="650" y="22" width="120" height="36" rx="18" fill="#A6CE39" opacity="0.15" stroke="#A6CE39" stroke-width="1.5" />
+  <text x="80" y="38" font-family="system-ui, sans-serif" font-size="14" fill="#A6CE39" font-weight="bold">ORCID</text>
+  <text x="80" y="58" font-family="system-ui, sans-serif" font-size="12" fill="#8B949E">0009-0004-6864-8767</text>
+  <a href="https://orcid.org/{ORCID_ID}" target="_blank">
+    <rect x="650" y="22" width="120" height="36" rx="18" fill="#A6CE39" opacity="0.15" stroke="#A6CE39" stroke-width="1.5" class="orcid-btn" />
     <text x="710" y="45" font-family="system-ui, sans-serif" font-size="13" fill="#A6CE39" text-anchor="middle" font-weight="bold">View Profile</text>
   </a>
 </svg>'''
@@ -234,31 +232,29 @@ def generate_stats_svg(stats, total_stars):
       <stop offset="100%" stop-color="#161b22" />
     </linearGradient>
   </defs>
+  <style>
+    @keyframes slideIn {{ 0% {{ opacity: 0; transform: translateX(-20px); }} 100% {{ opacity: 1; transform: translateX(0); }} }}
+    .stat {{ animation: slideIn 0.6s ease-out forwards; }}
+    @keyframes countPulse {{ 0% {{ transform: scale(1); }} 50% {{ transform: scale(1.1); }} 100% {{ transform: scale(1); }} }}
+    .count {{ animation: countPulse 2s ease-in-out infinite; }}
+  </style>
   <rect width="100%" height="100%" rx="16" fill="url(#bgGrad)" stroke="#30363d" stroke-width="1" />
   <text x="30" y="40" font-family="system-ui, sans-serif" font-size="20" fill="#58A6FF" font-weight="bold">📊 Developer Stats</text>
   <line x1="20" y1="55" x2="780" y2="55" stroke="#30363d" stroke-width="1" />
-  <g opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.1s" />
-    <animateTransform attributeName="transform" type="translate" values="-20,0;0,0" dur="0.5s" fill="freeze" begin="0.1s" />
-    <text x="100" y="90" font-family="system-ui, sans-serif" font-size="28" fill="#D29922" font-weight="bold" text-anchor="middle">{total_stars}</text>
+  <g class="stat" style="animation-delay: 0.1s">
+    <text x="100" y="90" font-family="system-ui, sans-serif" font-size="28" fill="#D29922" font-weight="bold" text-anchor="middle" class="count">{total_stars}</text>
     <text x="100" y="115" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Total Stars</text>
   </g>
-  <g opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.2s" />
-    <animateTransform attributeName="transform" type="translate" values="-20,0;0,0" dur="0.5s" fill="freeze" begin="0.2s" />
-    <text x="300" y="90" font-family="system-ui, sans-serif" font-size="28" fill="#58A6FF" font-weight="bold" text-anchor="middle">{stats.get("public_repos", 0)}</text>
+  <g class="stat" style="animation-delay: 0.2s">
+    <text x="300" y="90" font-family="system-ui, sans-serif" font-size="28" fill="#58A6FF" font-weight="bold" text-anchor="middle" class="count">{stats.get("public_repos", 0)}</text>
     <text x="300" y="115" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Public Repos</text>
   </g>
-  <g opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.3s" />
-    <animateTransform attributeName="transform" type="translate" values="-20,0;0,0" dur="0.5s" fill="freeze" begin="0.3s" />
-    <text x="500" y="90" font-family="system-ui, sans-serif" font-size="28" fill="#3FB950" font-weight="bold" text-anchor="middle">{stats.get("followers", 0)}</text>
+  <g class="stat" style="animation-delay: 0.3s">
+    <text x="500" y="90" font-family="system-ui, sans-serif" font-size="28" fill="#3FB950" font-weight="bold" text-anchor="middle" class="count">{stats.get("followers", 0)}</text>
     <text x="500" y="115" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Followers</text>
   </g>
-  <g opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.4s" />
-    <animateTransform attributeName="transform" type="translate" values="-20,0;0,0" dur="0.5s" fill="freeze" begin="0.4s" />
-    <text x="700" y="90" font-family="system-ui, sans-serif" font-size="28" fill="#8B5CF6" font-weight="bold" text-anchor="middle">{stats.get("following", 0)}</text>
+  <g class="stat" style="animation-delay: 0.4s">
+    <text x="700" y="90" font-family="system-ui, sans-serif" font-size="28" fill="#8B5CF6" font-weight="bold" text-anchor="middle" class="count">{stats.get("following", 0)}</text>
     <text x="700" y="115" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Following</text>
   </g>
 </svg>'''
@@ -268,6 +264,7 @@ def generate_streak_svg(total_contributions, current_streak, longest_streak):
     height = 160
     dash = 188.5
     offset = dash - (dash * min(current_streak, 30) / 30)
+    display_total = total_contributions if total_contributions > 0 else "N/A"
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="800" height="{height}" viewBox="0 0 800 {height}">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -282,28 +279,26 @@ def generate_streak_svg(total_contributions, current_streak, longest_streak):
       </feMerge>
     </filter>
   </defs>
+  <style>
+    @keyframes fillRing {{ 0% {{ stroke-dashoffset: {dash}; }} 100% {{ stroke-dashoffset: {offset}; }} }}
+    @keyframes spin {{ 0% {{ transform: rotate(0deg); }} 100% {{ transform: rotate(360deg); }} }}
+    @keyframes pulse {{ 0% {{ opacity: 1; }} 50% {{ opacity: 0.5; }} 100% {{ opacity: 1; }} }}
+    .ring {{ animation: fillRing 1.5s ease-out forwards, pulse 3s ease-in-out infinite; }}
+    .spin-anim {{ animation: spin 10s linear infinite; transform-origin: 400px 95px; }}
+  </style>
   <rect width="100%" height="100%" rx="16" fill="url(#bgGrad)" stroke="#30363d" stroke-width="1" />
   <text x="30" y="40" font-family="system-ui, sans-serif" font-size="20" fill="#58A6FF" font-weight="bold">🔥 Contribution Streak</text>
   <line x1="20" y1="55" x2="780" y2="55" stroke="#30363d" stroke-width="1" />
-  <g opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.1s" />
-    <text x="150" y="100" font-family="system-ui, sans-serif" font-size="32" fill="#58A6FF" font-weight="bold" text-anchor="middle">{total_contributions}</text>
-    <text x="150" y="125" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Total Contributions</text>
-  </g>
-  <g opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.2s" />
+  <text x="150" y="100" font-family="system-ui, sans-serif" font-size="32" fill="#58A6FF" font-weight="bold" text-anchor="middle">{display_total}</text>
+  <text x="150" y="125" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Total Contributions</text>
+  <g>
     <circle cx="400" cy="95" r="30" fill="none" stroke="#30363d" stroke-width="4" />
-    <circle cx="400" cy="95" r="30" fill="none" stroke="#F85149" stroke-width="4" stroke-dasharray="{dash}" stroke-dashoffset="{dash}" filter="url(#glow)">
-      <animate attributeName="stroke-dashoffset" values="{dash};{offset}" dur="1s" fill="freeze" begin="0.5s" />
-    </circle>
+    <circle cx="400" cy="95" r="30" fill="none" stroke="#F85149" stroke-width="4" stroke-dasharray="{dash}" stroke-dashoffset="{dash}" filter="url(#glow)" class="ring" />
     <text x="400" y="100" font-family="system-ui, sans-serif" font-size="22" fill="#F85149" font-weight="bold" text-anchor="middle">{current_streak}</text>
     <text x="400" y="125" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Current Streak</text>
   </g>
-  <g opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.3s" />
-    <text x="650" y="100" font-family="system-ui, sans-serif" font-size="32" fill="#3FB950" font-weight="bold" text-anchor="middle">{longest_streak}</text>
-    <text x="650" y="125" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Longest Streak</text>
-  </g>
+  <text x="650" y="100" font-family="system-ui, sans-serif" font-size="32" fill="#3FB950" font-weight="bold" text-anchor="middle">{longest_streak}</text>
+  <text x="650" y="125" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Longest Streak</text>
 </svg>'''
     with open("assets/streak.svg", "w", encoding="utf-8") as f: f.write(svg)
 
@@ -320,6 +315,10 @@ def generate_languages_svg(repos):
       <stop offset="100%" stop-color="#161b22" />
     </linearGradient>
   </defs>
+  <style>
+    @keyframes growBar {{ 0% {{ width: 0; }} 100% {{ width: var(--target); }} }}
+    .bar {{ animation: growBar 1s ease-out forwards; }}
+  </style>
   <rect width="100%" height="100%" rx="16" fill="url(#bgGrad)" stroke="#30363d" stroke-width="1" />
   <text x="30" y="40" font-family="system-ui, sans-serif" font-size="20" fill="#58A6FF" font-weight="bold">💻 Language Breakdown</text>
   <line x1="20" y1="55" x2="780" y2="55" stroke="#30363d" stroke-width="1" />
@@ -332,9 +331,7 @@ def generate_languages_svg(repos):
         svg += f'''  <g>
     <text x="30" y="{y}" font-family="system-ui, sans-serif" font-size="14" fill="#c9d1d9">{lang}</text>
     <text x="780" y="{y}" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="end">{pct:.1f}%</text>
-    <rect x="150" y="{y-10}" width="0" height="12" rx="6" fill="{color}">
-      <animate attributeName="width" values="0;{bar_w}" dur="0.8s" fill="freeze" begin="{delay}s" />
-    </rect>
+    <rect x="150" y="{y-10}" width="0" height="12" rx="6" fill="{color}" class="bar" style="--target: {bar_w}px; animation-delay: {delay}s" />
   </g>
 '''
         y += 40; delay += 0.1
@@ -350,18 +347,20 @@ def generate_activity_svg(repos):
       <stop offset="100%" stop-color="#161b22" />
     </linearGradient>
   </defs>
+  <style>
+    @keyframes slideIn {{ 0% {{ opacity: 0; transform: translateX(-30px); }} 100% {{ opacity: 1; transform: translateX(0); }} }}
+    @keyframes pulseDot {{ 0% {{ opacity: 1; }} 50% {{ opacity: 0.2; }} 100% {{ opacity: 1; }} }}
+    .row {{ animation: slideIn 0.6s ease-out forwards; }}
+    .dot {{ animation: pulseDot 1.5s ease-in-out infinite; }}
+  </style>
   <rect width="100%" height="100%" rx="16" fill="url(#bgGrad)" stroke="#30363d" stroke-width="1" />
   <text x="30" y="40" font-family="system-ui, sans-serif" font-size="20" fill="#58A6FF" font-weight="bold">⚡ Dynamic Activity</text>
-  <circle cx="740" cy="35" r="6" fill="#3FB950">
-    <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite" />
-  </circle>
+  <circle cx="740" cy="35" r="6" fill="#3FB950" class="dot" />
   <line x1="20" y1="55" x2="780" y2="55" stroke="#30363d" stroke-width="1" />
 '''
     y, delay = 85, 0.1
     for repo, date in repos:
-        svg += f'''  <g opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="{delay}s" />
-    <animateTransform attributeName="transform" type="translate" values="-30,0;0,0" dur="0.5s" fill="freeze" begin="{delay}s" />
+        svg += f'''  <g class="row" style="animation-delay: {delay}s">
     <text x="30" y="{y}" font-family="system-ui, sans-serif" font-size="15" fill="#58A6FF" font-weight="bold">{html.escape(repo)}</text>
     <text x="400" y="{y}" font-family="system-ui, sans-serif" font-size="15" fill="#3FB950">⚡ Pushed commits</text>
     <text x="650" y="{y}" font-family="system-ui, sans-serif" font-size="15" fill="#8B949E">{date}</text>
@@ -387,20 +386,23 @@ def generate_starred_svg(repos):
       </feMerge>
     </filter>
   </defs>
+  <style>
+    @keyframes slideIn {{ 0% {{ opacity: 0; transform: translateX(30px); }} 100% {{ opacity: 1; transform: translateX(0); }} }}
+    @keyframes rotateStar {{ 0% {{ transform: rotate(0deg); }} 100% {{ transform: rotate(360deg); }} }}
+    @keyframes pulseStar {{ 0% {{ opacity: 1; }} 50% {{ opacity: 0.5; }} 100% {{ opacity: 1; }} }}
+    .row {{ animation: slideIn 0.6s ease-out forwards; }}
+    .star {{ animation: rotateStar 10s linear infinite, pulseStar 2s ease-in-out infinite; transform-origin: 740px 35px; }}
+  </style>
   <rect width="100%" height="100%" rx="16" fill="url(#bgGrad)" stroke="#30363d" stroke-width="1" />
   <text x="30" y="40" font-family="system-ui, sans-serif" font-size="20" fill="#58A6FF" font-weight="bold">⭐ Top Starred Repositories</text>
   <g transform="translate(740, 35)">
-    <path d="M0,-8 L2.5,-2.5 L8,-2.5 L3.5,1 L5,6.5 L0,3 L-5,6.5 L-3.5,1 L-8,-2.5 L-2.5,-2.5 Z" fill="#D29922" filter="url(#glow)">
-      <animateTransform attributeName="transform" type="rotate" values="0;10;-10;0" dur="4s" repeatCount="indefinite" />
-    </path>
+    <path d="M0,-8 L2.5,-2.5 L8,-2.5 L3.5,1 L5,6.5 L0,3 L-5,6.5 L-3.5,1 L-8,-2.5 L-2.5,-2.5 Z" fill="#D29922" filter="url(#glow)" class="star" />
   </g>
   <line x1="20" y1="55" x2="780" y2="55" stroke="#30363d" stroke-width="1" />
 '''
     y, delay = 85, 0.1
     for name, stars, desc in repos:
-        svg += f'''  <g opacity="0">
-    <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="{delay}s" />
-    <animateTransform attributeName="transform" type="translate" values="30,0;0,0" dur="0.5s" fill="freeze" begin="{delay}s" />
+        svg += f'''  <g class="row" style="animation-delay: {delay}s">
     <text x="30" y="{y}" font-family="system-ui, sans-serif" font-size="15" fill="#58A6FF" font-weight="bold">{html.escape(name)}</text>
     <text x="300" y="{y}" font-family="system-ui, sans-serif" font-size="15" fill="#D29922">⭐ {stars}</text>
     <text x="420" y="{y}" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E">{html.escape(desc)}</text>
