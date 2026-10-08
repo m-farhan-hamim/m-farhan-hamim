@@ -1,0 +1,7 @@
+max_lines: 5
+readme_path: 'README.md'
+commit_message: '⚡ Update recent activity & top starred repos'
+template: |
+  | 🚀 Repository | 🛠️ Activity | 📅 Date |
+  | :--- | :--- | :--- |
+  | **[{repo}](https://github.com/m-farhan-hamim/{repo})** | {activity} | {date} |
