@@ -92,16 +92,10 @@
   <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1f6feb,100:58A6FF&height=2&width=1000" />
 </div>
 <h2 align="center">⚡ Dynamic Activity</h2>
-<div align="center">
-  <!-- RECENT_ACTIVITY:start -->
-| 🚀 Repository | 🛠️ Activity | 📅 Date |
-| :--- | :--- | :--- |
-| **[m-farhan-hamim/m-farhan-hamim](https://github.com/m-farhan-hamim/m-farhan-hamim)** | ⚡ Pushed commits | 2026-10-08 |
-| **[m-farhan-hamim/NetShield-DNS-Resolver-by-PSBDx](https://github.com/m-farhan-hamim/NetShield-DNS-Resolver-by-PSBDx)** | ⚡ Pushed commits | 2026-10-08 |
-| **[m-farhan-hamim/PSBDx-SVN](https://github.com/m-farhan-hamim/PSBDx-SVN)** | ⚡ Pushed commits | 2026-10-08 |
 
+<!-- RECENT_ACTIVITY:start -->
 <!-- RECENT_ACTIVITY:end -->
-</div>
+
 <br />
 
 <!-- SECTION 6 — TOP STARRED REPOSITORIES (AUTO-UPDATED) -->
@@ -109,16 +103,10 @@
   <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1f6feb,100:58A6FF&height=2&width=1000" />
 </div>
 <h2 align="center">⭐ Top Starred Repositories</h2>
-<div align="center">
-  <!-- TOP_STARRED:start -->
-| Repository | Stars | Description |
-| :--- | :--- | :--- |
-| **[m-farhan-hamim](https://github.com/m-farhan-hamim/m-farhan-hamim)** | ⭐ 0 | None |
-| **[PSBDx-SVN](https://github.com/m-farhan-hamim/PSBDx-SVN)** | ⭐ 1 | An Android SVN App. |
-| **[Notifications](https://github.com/m-farhan-hamim/Notifications)** | ⭐ 0 | Notice: This repository is dedicated to my open-source f-droid compatible android apps to send notifications. Don't expect any code or release in this repository. :) |
 
+<!-- TOP_STARRED:start -->
 <!-- TOP_STARRED:end -->
-</div>
+
 <br />
 
 <!-- SECTION 7 — CURRENT FOCUS -->
