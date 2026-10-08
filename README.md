@@ -120,7 +120,7 @@
 
 <div align="center">
 
-<!-- I kept the two that were working perfectly in your screenshot! -->
+<!-- The two most reliable stats cards -->
 <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=m-farhan-hamim&layout=compact&theme=tokyonight&bg_color=0d1117&hide_border=true&langs_count=8" />
 <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=m-farhan-hamim&theme=tokyonight&background=0d1117&hide_border=true" alt="GitHub Streak" />
 
@@ -129,7 +129,41 @@
 <br />
 
 <!-- ═══════════════════════════════════════════════════════════ -->
-<!--  SECTION 5 — CURRENT FOCUS                                 -->
+<!--  SECTION 5 — DYNAMIC ACTIVITY (AUTO-UPDATED)               -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1f6feb,100:58A6FF&height=2&width=1000" />
+</div>
+
+<h2 align="center">⚡ Dynamic Activity</h2>
+
+<div align="center">
+  <!-- RECENT_ACTIVITY:start -->
+  <!-- RECENT_ACTIVITY:end -->
+</div>
+
+<br />
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  SECTION 6 — TOP STARRED REPOSITORIES (AUTO-UPDATED)       -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1f6feb,100:58A6FF&height=2&width=1000" />
+</div>
+
+<h2 align="center">⭐ Top Starred Repositories</h2>
+
+<div align="center">
+  <!-- TOP_STARRED:start -->
+  <!-- TOP_STARRED:end -->
+</div>
+
+<br />
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  SECTION 7 — CURRENT FOCUS                                 -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
 <div align="center">
@@ -151,7 +185,7 @@
 <br />
 
 <!-- ═══════════════════════════════════════════════════════════ -->
-<!--  SECTION 6 — FEATURED PROJECTS (BULLETPROOF DESIGN)        -->
+<!--  SECTION 8 — FEATURED PROJECTS (BULLETPROOF DESIGN)        -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
 <div align="center">
@@ -253,7 +287,7 @@
 <br />
 
 <!-- ═══════════════════════════════════════════════════════════ -->
-<!--  SECTION 7 — WORDPRESS CONTRIBUTIONS                       -->
+<!--  SECTION 9 — WORDPRESS CONTRIBUTIONS                       -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
 <div align="center">
@@ -286,7 +320,29 @@
 <br />
 
 <!-- ═══════════════════════════════════════════════════════════ -->
-<!--  SECTION 8 — CONNECT                                       -->
+<!--  SECTION 10 — DEV QUOTE                                    -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1f6feb,100:58A6FF&height=2&width=1000" />
+</div>
+
+<h2 align="center">💭 Words I Live By</h2>
+
+<div align="center">
+  <blockquote>
+    <p><i>"Simplicity is the ultimate sophistication."</i></p>
+    <p>— <strong>Leonardo da Vinci</strong></p>
+  </blockquote>
+  <br />
+  <p><i>"Programs must be written for people to read, and only incidentally for machines to execute."</i></p>
+  <p>— <strong>Harold Abelson</strong></p>
+</div>
+
+<br />
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  SECTION 11 — CONNECT                                      -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
 <div align="center">
