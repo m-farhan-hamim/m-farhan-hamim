@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="80" viewBox="0 0 800 80">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117" />
+      <stop offset="100%" stop-color="#161b22" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" rx="12" fill="url(#bgGrad)" stroke="#A6CE39" stroke-width="1.5" />
+  <g transform="translate(30, 25)">
+    <circle cx="15" cy="15" r="15" fill="#A6CE39" />
+    <path d="M10 10h3v10h-3V10zm1.5-3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" fill="#ffffff" />
+    <text x="50" y="12" font-family="system-ui, sans-serif" font-size="14" fill="#A6CE39" font-weight="bold">ORCID</text>
+    <text x="50" y="30" font-family="system-ui, sans-serif" font-size="12" fill="#8B949E">0009-0004-6864-8767</text>
+  </g>
+  <a href="https://orcid.org/0009-0004-6864-8767" target="_blank">
+    <rect x="650" y="22" width="120" height="36" rx="18" fill="#A6CE39" opacity="0.15" stroke="#A6CE39" stroke-width="1.5" />
+    <text x="710" y="45" font-family="system-ui, sans-serif" font-size="13" fill="#A6CE39" text-anchor="middle" font-weight="bold">View Profile</text>
+  </a>
+</svg>

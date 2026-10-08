@@ -6,7 +6,15 @@
     </linearGradient>
   </defs>
   <rect width="100%" height="100%" fill="#0d1117" />
-  <path d="M0,180 Q200,140 400,180 T800,180 L800,220 L0,220 Z" fill="url(#waveGrad)" opacity="0.8" />
-  <text x="400" y="90" font-family="system-ui, -apple-system, sans-serif" font-size="36" fill="#ffffff" font-weight="bold" text-anchor="middle">M. Farhan Hamim</text>
-  <text x="400" y="130" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#8B949E" text-anchor="middle">CEO @ PSBDx | WordPress Plugin Developer</text>
+  <path d="M0,180 Q200,140 400,180 T800,180 L800,220 L0,220 Z" fill="url(#waveGrad)" opacity="0.8">
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-5;0,0" dur="4s" repeatCount="indefinite" />
+  </path>
+  <text x="400" y="90" font-family="system-ui, -apple-system, sans-serif" font-size="36" fill="#ffffff" font-weight="bold" text-anchor="middle">
+    M. Farhan Hamim
+    <animate attributeName="opacity" values="0;1" dur="0.8s" fill="freeze" />
+  </text>
+  <text x="400" y="130" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#8B949E" text-anchor="middle">
+    CEO @ PSBDx | WordPress Plugin Developer
+    <animate attributeName="opacity" values="0;1" dur="0.8s" fill="freeze" begin="0.3s" />
+  </text>
 </svg>

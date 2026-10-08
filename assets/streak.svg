@@ -1,12 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="160" viewBox="0 0 800 160">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0d1117" /><stop offset="100%" stop-color="#161b22" /></linearGradient>
-    <filter id="glow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117" />
+      <stop offset="100%" stop-color="#161b22" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
   <rect width="100%" height="100%" rx="16" fill="url(#bgGrad)" stroke="#30363d" stroke-width="1" />
   <text x="30" y="40" font-family="system-ui, sans-serif" font-size="20" fill="#58A6FF" font-weight="bold">🔥 Contribution Streak</text>
   <line x1="20" y1="55" x2="780" y2="55" stroke="#30363d" stroke-width="1" />
-  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.1s" /><text x="150" y="100" font-family="system-ui, sans-serif" font-size="32" fill="#58A6FF" font-weight="bold" text-anchor="middle">0</text><text x="150" y="125" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Total Contributions</text></g>
-  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.2s" /><circle cx="400" cy="95" r="30" fill="none" stroke="#30363d" stroke-width="4" /><circle cx="400" cy="95" r="30" fill="none" stroke="#F85149" stroke-width="4" stroke-dasharray="188.5" stroke-dashoffset="188.5" filter="url(#glow)"><animate attributeName="stroke-dashoffset" values="188.5;188.5" dur="1s" fill="freeze" begin="0.5s" /></circle><text x="400" y="100" font-family="system-ui, sans-serif" font-size="22" fill="#F85149" font-weight="bold" text-anchor="middle">0</text><text x="400" y="125" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Current Streak</text></g>
-  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.3s" /><text x="650" y="100" font-family="system-ui, sans-serif" font-size="32" fill="#3FB950" font-weight="bold" text-anchor="middle">6</text><text x="650" y="125" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Longest Streak</text></g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.1s" />
+    <text x="150" y="100" font-family="system-ui, sans-serif" font-size="32" fill="#58A6FF" font-weight="bold" text-anchor="middle">0</text>
+    <text x="150" y="125" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Total Contributions</text>
+  </g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.2s" />
+    <circle cx="400" cy="95" r="30" fill="none" stroke="#30363d" stroke-width="4" />
+    <circle cx="400" cy="95" r="30" fill="none" stroke="#F85149" stroke-width="4" stroke-dasharray="188.5" stroke-dashoffset="188.5" filter="url(#glow)">
+      <animate attributeName="stroke-dashoffset" values="188.5;188.5" dur="1s" fill="freeze" begin="0.5s" />
+    </circle>
+    <text x="400" y="100" font-family="system-ui, sans-serif" font-size="22" fill="#F85149" font-weight="bold" text-anchor="middle">0</text>
+    <text x="400" y="125" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Current Streak</text>
+  </g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.3s" />
+    <text x="650" y="100" font-family="system-ui, sans-serif" font-size="32" fill="#3FB950" font-weight="bold" text-anchor="middle">6</text>
+    <text x="650" y="125" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Longest Streak</text>
+  </g>
 </svg>

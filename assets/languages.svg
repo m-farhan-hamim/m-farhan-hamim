@@ -1,9 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220">
-  <defs><linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0d1117" /><stop offset="100%" stop-color="#161b22" /></linearGradient></defs>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117" />
+      <stop offset="100%" stop-color="#161b22" />
+    </linearGradient>
+  </defs>
   <rect width="100%" height="100%" rx="16" fill="url(#bgGrad)" stroke="#30363d" stroke-width="1" />
   <text x="30" y="40" font-family="system-ui, sans-serif" font-size="20" fill="#58A6FF" font-weight="bold">💻 Language Breakdown</text>
   <line x1="20" y1="55" x2="780" y2="55" stroke="#30363d" stroke-width="1" />
-  <g><text x="30" y="85" font-family="system-ui, sans-serif" font-size="14" fill="#c9d1d9">Kotlin</text><text x="780" y="85" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="end">42.9%</text><rect x="150" y="75" width="0" height="12" rx="6" fill="#58A6FF"><animate attributeName="width" values="0;214.28571428571428" dur="0.8s" fill="freeze" begin="0.1s" /></rect></g>
-  <g><text x="30" y="125" font-family="system-ui, sans-serif" font-size="14" fill="#c9d1d9">Python</text><text x="780" y="125" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="end">28.6%</text><rect x="150" y="115" width="0" height="12" rx="6" fill="#3FB950"><animate attributeName="width" values="0;142.85714285714286" dur="0.8s" fill="freeze" begin="0.2s" /></rect></g>
-  <g><text x="30" y="165" font-family="system-ui, sans-serif" font-size="14" fill="#c9d1d9">Java</text><text x="780" y="165" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="end">28.6%</text><rect x="150" y="155" width="0" height="12" rx="6" fill="#D29922"><animate attributeName="width" values="0;142.85714285714286" dur="0.8s" fill="freeze" begin="0.30000000000000004s" /></rect></g>
+  <g>
+    <text x="30" y="85" font-family="system-ui, sans-serif" font-size="14" fill="#c9d1d9">Kotlin</text>
+    <text x="780" y="85" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="end">42.9%</text>
+    <rect x="150" y="75" width="0" height="12" rx="6" fill="#58A6FF">
+      <animate attributeName="width" values="0;214.28571428571428" dur="0.8s" fill="freeze" begin="0.1s" />
+    </rect>
+  </g>
+  <g>
+    <text x="30" y="125" font-family="system-ui, sans-serif" font-size="14" fill="#c9d1d9">Python</text>
+    <text x="780" y="125" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="end">28.6%</text>
+    <rect x="150" y="115" width="0" height="12" rx="6" fill="#3FB950">
+      <animate attributeName="width" values="0;142.85714285714286" dur="0.8s" fill="freeze" begin="0.2s" />
+    </rect>
+  </g>
+  <g>
+    <text x="30" y="165" font-family="system-ui, sans-serif" font-size="14" fill="#c9d1d9">Java</text>
+    <text x="780" y="165" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="end">28.6%</text>
+    <rect x="150" y="155" width="0" height="12" rx="6" fill="#D29922">
+      <animate attributeName="width" values="0;142.85714285714286" dur="0.8s" fill="freeze" begin="0.30000000000000004s" />
+    </rect>
+  </g>
 </svg>

@@ -1,8 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="60" viewBox="0 0 800 60">
-  <rect x="180" y="10" width="120" height="36" rx="18" fill="#0d1117" stroke="#1f6feb" stroke-width="1.5" />
+  <rect x="180" y="10" width="120" height="36" rx="18" fill="#0d1117" stroke="#1f6feb" stroke-width="1.5">
+    <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite" />
+  </rect>
   <text x="240" y="33" font-family="system-ui, sans-serif" font-size="14" fill="#58A6FF" text-anchor="middle">GitHub</text>
-  <rect x="320" y="10" width="160" height="36" rx="18" fill="#0d1117" stroke="#1f6feb" stroke-width="1.5" />
+  <rect x="320" y="10" width="160" height="36" rx="18" fill="#0d1117" stroke="#1f6feb" stroke-width="1.5">
+    <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite" begin="0.5s" />
+  </rect>
   <text x="400" y="33" font-family="system-ui, sans-serif" font-size="14" fill="#58A6FF" text-anchor="middle">WordPress</text>
-  <rect x="500" y="10" width="120" height="36" rx="18" fill="#0d1117" stroke="#1f6feb" stroke-width="1.5" />
+  <rect x="500" y="10" width="120" height="36" rx="18" fill="#0d1117" stroke="#1f6feb" stroke-width="1.5">
+    <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite" begin="1s" />
+  </rect>
   <text x="560" y="33" font-family="system-ui, sans-serif" font-size="14" fill="#58A6FF" text-anchor="middle">PSBDx</text>
 </svg>
