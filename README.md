@@ -94,6 +94,14 @@
 <h2 align="center">⚡ Dynamic Activity</h2>
 
 <!-- RECENT_ACTIVITY:start -->
+
+| 🚀 Repository | 🛠️ Activity | 📅 Date |
+| :--- | :--- | :--- |
+| **[m-farhan-hamim/m-farhan-hamim](https://github.com/m-farhan-hamim/m-farhan-hamim)** | ⚡ Pushed commits | 2026-10-08 |
+| **[m-farhan-hamim/NetShield-DNS-Resolver-by-PSBDx](https://github.com/m-farhan-hamim/NetShield-DNS-Resolver-by-PSBDx)** | ⚡ Pushed commits | 2026-10-08 |
+| **[m-farhan-hamim/PSBDx-SVN](https://github.com/m-farhan-hamim/PSBDx-SVN)** | ⚡ Pushed commits | 2026-10-08 |
+
+
 <!-- RECENT_ACTIVITY:end -->
 
 <br />
@@ -105,6 +113,14 @@
 <h2 align="center">⭐ Top Starred Repositories</h2>
 
 <!-- TOP_STARRED:start -->
+
+| Repository | Stars | Description |
+| :--- | :--- | :--- |
+| **[m-farhan-hamim](https://github.com/m-farhan-hamim/m-farhan-hamim)** | ⭐ 0 | No description provided. |
+| **[PSBDx-SVN](https://github.com/m-farhan-hamim/PSBDx-SVN)** | ⭐ 1 | An Android SVN App. |
+| **[Notifications](https://github.com/m-farhan-hamim/Notifications)** | ⭐ 0 | Notice: This repository is dedicated to my open-source f-... |
+
+
 <!-- TOP_STARRED:end -->
 
 <br />
