@@ -28,18 +28,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # 👇 NEW STEP: Generate Trophy SVG locally
+      # 👇 FIXED: Using the correct input names for this action
       - name: Generate Trophy SVG
         uses: Erik-Donath/github-profile-trophy@feature/generate-svg
         with:
-          username: ${{ github.repository_owner }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ github.repository_owner }}
           file: assets/trophy.svg
           theme: tokyonight
+          max-cols: 7
           max-rows: 1
-          column: 7
-          margin-w: 10
-          margin-h: 10
+          margin-width: 10
+          margin-height: 10
+          no-frame: true
+          no-background: false
 
       - name: Commit and Push Changes
         run: |
