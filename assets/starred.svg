@@ -27,7 +27,7 @@
   <line x1="20" y1="55" x2="780" y2="55" stroke="#30363d" stroke-width="1" />
   <g class="row" style="animation-delay: 0.1s">
     <text x="30" y="85" font-family="system-ui, sans-serif" font-size="15" fill="#58A6FF" font-weight="bold">NetShield-DNS-Resolver-by-PSBDx</text>
-    <text x="300" y="85" font-family="system-ui, sans-serif" font-size="15" fill="#D29922">⭐ 11</text>
+    <text x="300" y="85" font-family="system-ui, sans-serif" font-size="15" fill="#D29922">⭐ 12</text>
     <text x="420" y="85" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E">A local DNS resolver, ad/tracker sinkhole ...</text>
   </g>
   <g class="row" style="animation-delay: 0.2s">
