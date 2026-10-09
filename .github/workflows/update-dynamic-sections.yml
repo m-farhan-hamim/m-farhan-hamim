@@ -26,13 +26,13 @@ jobs:
       - name: Run Custom SVG Generator Script
         run: python .github/scripts/update_readme.py
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      # 👇 FIXED: Using the correct input names for this action
+      # 👇 Now uses the PAT (GH_TOKEN) for higher API rate limits
       - name: Generate Trophy SVG
         uses: Erik-Donath/github-profile-trophy@feature/generate-svg
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
           username: ${{ github.repository_owner }}
           file: assets/trophy.svg
           theme: tokyonight
