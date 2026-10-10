@@ -28,6 +28,8 @@
 
 </div>
 
+[![Recent donators](https://donate.psbdx.com/widget.svg?style=compact)](https://donate.psbdx.com/)
+
 <!-- ═══════════════════════════════════════════════════════════ -->
 <!--  ABOUT ME                                                    -->
 <!-- ═══════════════════════════════════════════════════════════ -->
