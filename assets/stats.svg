@@ -15,7 +15,7 @@
   <text x="30" y="40" font-family="system-ui, sans-serif" font-size="20" fill="#58A6FF" font-weight="bold">📊 Developer Stats</text>
   <line x1="20" y1="55" x2="780" y2="55" stroke="#30363d" stroke-width="1" />
   <g class="stat" style="animation-delay: 0.1s">
-    <text x="100" y="90" font-family="system-ui, sans-serif" font-size="28" fill="#D29922" font-weight="bold" text-anchor="middle" class="count">15</text>
+    <text x="100" y="90" font-family="system-ui, sans-serif" font-size="28" fill="#D29922" font-weight="bold" text-anchor="middle" class="count">16</text>
     <text x="100" y="115" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Total Stars</text>
   </g>
   <g class="stat" style="animation-delay: 0.2s">
