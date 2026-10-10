@@ -25,10 +25,15 @@
   <a href="https://orcid.org/0009-0004-6864-8767"><img src="https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" /></a>
   <img src="https://komarev.com/ghpvc/?username=m-farhan-hamim&style=for-the-badge&color=1f6feb&label=PROFILE+VIEWS" alt="Profile views" />
 </p>
+
 [![Recent donators](https://donate.psbdx.com/widget.svg?style=badge)](https://donate.psbdx.com/)
+
 </div>
+
 <div align="center">
+  
 [![Recent donators](https://donate.psbdx.com/widget.svg?style=compact)](https://donate.psbdx.com/)
+
 </div>
 <!-- ═══════════════════════════════════════════════════════════ -->
 <!--  ABOUT ME                                                    -->
