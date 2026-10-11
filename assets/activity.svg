@@ -18,16 +18,16 @@
   <g class="row" style="animation-delay: 0.1s">
     <text x="30" y="85" font-family="system-ui, sans-serif" font-size="15" fill="#58A6FF" font-weight="bold">PSBDx-SVN</text>
     <text x="400" y="85" font-family="system-ui, sans-serif" font-size="15" fill="#3FB950">⚡ Pushed commits</text>
-    <text x="650" y="85" font-family="system-ui, sans-serif" font-size="15" fill="#8B949E">2026-10-09</text>
+    <text x="650" y="85" font-family="system-ui, sans-serif" font-size="15" fill="#8B949E">2026-10-10</text>
   </g>
   <g class="row" style="animation-delay: 0.2s">
-    <text x="30" y="130" font-family="system-ui, sans-serif" font-size="15" fill="#58A6FF" font-weight="bold">m-farhan-hamim</text>
+    <text x="30" y="130" font-family="system-ui, sans-serif" font-size="15" fill="#58A6FF" font-weight="bold">NetShield-DNS-Resolver-by-PSBDx</text>
     <text x="400" y="130" font-family="system-ui, sans-serif" font-size="15" fill="#3FB950">⚡ Pushed commits</text>
     <text x="650" y="130" font-family="system-ui, sans-serif" font-size="15" fill="#8B949E">2026-10-10</text>
   </g>
   <g class="row" style="animation-delay: 0.30000000000000004s">
-    <text x="30" y="175" font-family="system-ui, sans-serif" font-size="15" fill="#58A6FF" font-weight="bold">NetShield-DNS-Resolver-by-PSBDx</text>
+    <text x="30" y="175" font-family="system-ui, sans-serif" font-size="15" fill="#58A6FF" font-weight="bold">m-farhan-hamim</text>
     <text x="400" y="175" font-family="system-ui, sans-serif" font-size="15" fill="#3FB950">⚡ Pushed commits</text>
-    <text x="650" y="175" font-family="system-ui, sans-serif" font-size="15" fill="#8B949E">2026-10-08</text>
+    <text x="650" y="175" font-family="system-ui, sans-serif" font-size="15" fill="#8B949E">2026-10-10</text>
   </g>
 </svg>
