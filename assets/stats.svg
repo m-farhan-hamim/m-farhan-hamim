@@ -19,7 +19,7 @@
     <text x="100" y="115" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Total Stars</text>
   </g>
   <g class="stat" style="animation-delay: 0.2s">
-    <text x="300" y="90" font-family="system-ui, sans-serif" font-size="28" fill="#58A6FF" font-weight="bold" text-anchor="middle" class="count">10</text>
+    <text x="300" y="90" font-family="system-ui, sans-serif" font-size="28" fill="#58A6FF" font-weight="bold" text-anchor="middle" class="count">11</text>
     <text x="300" y="115" font-family="system-ui, sans-serif" font-size="14" fill="#8B949E" text-anchor="middle">Public Repos</text>
   </g>
   <g class="stat" style="animation-delay: 0.3s">
